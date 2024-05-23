@@ -19,8 +19,14 @@ let buttonsArray = Array.from(buttons);
            display.value=string;
        }
 
-       else if(e.target.innerHTML=='%') {
-        string='';
+      else if(e.target.innerHTML=='%') {
+        try{
+            string=eval(string)/100;
+            display.value= string;
+        }
+        catch(Error){
+            display.value = 'Error';
+        }
         display.value=string;
        }
        
